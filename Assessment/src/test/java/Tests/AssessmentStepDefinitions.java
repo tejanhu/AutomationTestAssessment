@@ -3,7 +3,6 @@ package Tests;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import static org.junit.Assert.assertEquals;
@@ -17,7 +16,7 @@ import com.relevantcodes.extentreports.LogStatus;
 
 import Pages.IndexPage;
 import Pages.PIMViewPage;
-import Pages.dashboardViewPage;
+import Pages.DashboardViewPage;
 
 import com.relevantcodes.extentreports.ExtentReports;
 
@@ -39,34 +38,20 @@ public class AssessmentStepDefinitions {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		assertNotNull(driver);
-		extent = new ExtentReports("C:\\Users\\Admin\\eclipse-workspace\\TestAutomationAssessment\report.html", true);
+		extent = new ExtentReports("C:\\Users\\Admin\\eclipse-workspace\\TestAutomationAssessment\\Report\\report.html", true);
 		driver.navigate().to("http://opensource.demo.orangehrmlive.com/index.php");
 		assertEquals("http://opensource.demo.orangehrmlive.com/index.php",driver.getCurrentUrl());
 		IndexPage homePage = PageFactory.initElements(driver, IndexPage.class);
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			
-		}
+
 		homePage.enterUser();
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			
-		}
+
 		homePage.enterPass();
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			
-		}
+
 		homePage.navigateToDashboardPage();
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+		driver.manage().timeouts().implicitlyWait(70, TimeUnit.SECONDS);
 		assertEquals("http://opensource.demo.orangehrmlive.com/index.php/dashboard", driver.getCurrentUrl());
-		dashboardViewPage dashboard = PageFactory.initElements(driver, dashboardViewPage.class);
+		DashboardViewPage dashboard = PageFactory.initElements(driver, DashboardViewPage.class);
 		dashboard.navigateToPIMPage();
 		PIMViewPage pim = PageFactory.initElements(driver, PIMViewPage.class);
 		pim.clickAddEmployee();

@@ -47,9 +47,6 @@ public void fillEmployeeDetails() {
 	mName.sendKeys("abcd");
 	lName.click();
 	lName.sendKeys("abcd");
-//	eId.click();
-//EXTRA:
-//	uploadBtn.click();
 }
 
 public boolean fNameFilled() {

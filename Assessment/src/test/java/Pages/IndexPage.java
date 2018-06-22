@@ -12,7 +12,7 @@ public WebElement username;
 @FindBy(id="txtPassword")
 public WebElement password;
 	
-@FindBy(id="btnLogin")
+@FindBy(xpath="//*[@id=\"btnLogin\"]")
 public WebElement loginBtn;
 
 public void enterUser() {
