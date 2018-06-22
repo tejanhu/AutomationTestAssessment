@@ -17,10 +17,12 @@ public WebElement loginBtn;
 
 public void enterUser() {
 	username.click();
+	username.sendKeys("Admin");
 }
 
 public void enterPass() {
 	password.click();
+	password.sendKeys("admin");
 }
 
 public void navigateToDashboardPage() {
