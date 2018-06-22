@@ -23,7 +23,7 @@ public void enterPass() {
 	password.click();
 }
 
-public void clickLogin() {
+public void navigateToDashboardPage() {
 	loginBtn.click();
 }
 	
